@@ -6,5 +6,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout node
+        uses: actions/checkout@v4
       - name: Hello
-        run: echo "Workflow runned"
+        run: echo "Workflow runned successfully!"
+      - name: List files
+        run: ls -la

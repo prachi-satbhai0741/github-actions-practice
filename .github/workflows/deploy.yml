@@ -1,4 +1,4 @@
-name: Pipeline
+name: Build and Deploy
 on:
   push:
     branches: [main]
@@ -6,9 +6,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout node
+      - name: Checkout code
         uses: actions/checkout@v4
-      - name: Hello
-        run: echo "Workflow runned successfully!"
-      - name: List files
-        run: ls -la
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Check Node version
+        run: node -v

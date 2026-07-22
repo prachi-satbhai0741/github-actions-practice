@@ -12,5 +12,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Check Node version
-        run: node -v
+      - name: Run build
+        run: npm run build
+      - name: Run build
+        run: npm run build
+      - name: List dist output
+        run: ls dist

@@ -1,10 +1,9 @@
-name: Build and Deploy
-on: 
- push:
-  branches: [main]
-jobs:
+name: Pipeline
+on:
+  push:
+    branches: [main]
+job:
   build:
     runs-on: ubuntu-latest
     steps:
-     - name: Greeting Welcome
-       run: echo "Workflow triggered!"
+      - name: hello

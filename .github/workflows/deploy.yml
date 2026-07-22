@@ -12,9 +12,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+        
       - name: Run build
         run: npm run build
-      - name: Run build
-        run: npm run build
-      - name: List dist output
-        run: ls dist
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
